@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<HTML>
+		<BODY>
+			<canvas id='lesson01' width='1000' height='1000'/>
+			<script>
+				let canvas = document.getElementById("lesson01");
+				let context = canvas.getContext("2d");
+
+				var pos = 0;
+				var step = 1;
+				
+				function draw() {
+				
+				 canvas.addEventListener("mousedown", function(e) {
+				var x = e.x;
+				var y = e.y;
+				context.fillRect(x, y, 5, 5);
+				}, true);
+				
+				if (step % 7 == 1) {
+					context.fillStyle = '#FF0000';
+					}
+					
+				if (step % 7 == 2) {
+					context.fillStyle = '#FF8C00';
+					}
+					
+				if (step % 7 == 3) {
+					context.fillStyle = '#FFD700';
+					}
+					
+				if (step % 7 == 4) {
+					context.fillStyle = '#00FF00';
+					}
+					
+				if (step % 7 == 5) {
+					context.fillStyle = '#00FFFF';
+					}
+					
+				if (step % 7 == 6) {
+					context.fillStyle = '#1E90FF';
+					}
+					
+				if (step % 7 == 0) {
+					context.fillStyle = '#8A2BE2';
+					}
+					
+					context.fillRect(0, pos, 200, 5);	
+					pos += 5;
+					step++;
+				}
+				
+				setInterval(draw, 50);
+			
+			</script>			
+		</BODY>
+</HTML>
